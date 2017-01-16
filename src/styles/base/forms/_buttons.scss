@@ -1,0 +1,12 @@
+//-----------  Buttons  ----------- */
+
+button,
+input[type='submit'],
+input[type='button'] {
+  appearance: none;
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+}

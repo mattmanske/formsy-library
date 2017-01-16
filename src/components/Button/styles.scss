@@ -1,0 +1,260 @@
+//-----------  Imports  -----------//
+
+@import '../../styles/_variables.scss';
+@import '../../styles/_mixins.scss';
+
+//-----------  Buttons  ----------- */
+
+.button {
+  appearance: none;
+  border: 2px solid transparent;
+  border-radius: 10em;
+  box-shadow: 0.1rem 0.1rem 0.6rem rgba($black, 0.15);
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  padding: 0.6em 2em;
+  position: relative;
+  text-align: center;
+  transition: $transition;
+  white-space: nowrap;
+
+  &:hover {
+    box-shadow: 0.15rem 0.15rem 0.67rem rgba($black, 0.25);
+  }
+
+  .button__inner {
+    text-transform: uppercase;
+    transition: $transition;
+  }
+
+  .material-icons {
+    @include antialiased;
+
+    font-size: 1.25em;
+    line-height: 0;
+    margin-left: -0.5em;
+    padding-right: 1em;
+    vertical-align: -0.2em;
+    transition: $transition;
+  }
+
+  .button__loader {
+    @include center-align;
+
+    fill: $white;
+    height: 3rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+
+  &.is-glyph {
+    padding-left: 1.33em;
+    padding-right: 1.33em;
+
+    .material-icons {
+      margin: 0;
+      padding: 0;
+      font-size: 1.5em;
+      vertical-align: -0.3em;
+    }
+  }
+
+  &.is-disabled, &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  &.is-loading {
+    .button__inner, .material-icons {
+      opacity: 0.25;
+    }
+  }
+
+  //-----------  STATE: Tablet  ----------- */
+
+  @include tablet-down {
+    padding-right: 2.25em;
+    padding-left: 2.25em;
+  }
+
+  //-----------  STATE: Middle  ----------- */
+
+  @include middle-down {
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+  }
+
+  //-----------  Button Sizes  ----------- */
+
+  &.button--sm {
+    font-size: 0.8em;
+    padding-bottom: 0.45em;
+    padding-top: 0.55em;
+
+    i {
+      vertical-align: -1px;
+    }
+  }
+
+  &.button--rg {
+    font-size: 1em;
+  }
+
+  &.button--lg {
+    font-size: 1.25em;
+  }
+
+  //-----------  Solid Buttons  ----------- */
+
+  &:not(.is-outlined) {
+    @include antialiased;
+
+    &.button--blue {
+      background: $blueLight;
+      color: $white;
+
+      &:hover, &:focus {
+        background: $blue;
+      }
+
+      &.is-disabled, &[disabled] {
+        background: mix($blueLight, $white, 50%);
+      }
+    }
+
+    &.button--dark-blue {
+      background: $blue;
+      color: $white;
+
+      &:hover, &:focus {
+        background: $blueDark;
+      }
+
+      &.is-disabled, &[disabled] {
+        background: mix($blueDark, $white, 50%);
+      }
+    }
+
+    &.button--gray {
+      background: $grayDark;
+      color: $white;
+
+      &:hover, &:focus {
+        background: $grayDarker;
+      }
+
+      &.is-disabled, &[disabled] {
+        background: mix($grayDark, $white, 50%);
+      }
+    }
+
+    &.button--red {
+      background: $red;
+      color: $white;
+
+      &:hover, &:focus {
+        background: darken($red, 10%);
+      }
+
+      &.is-disabled, &[disabled] {
+        background: mix($red, $white, 50%);
+      }
+    }
+
+    &.button--white {
+      background: $white;
+      color: $blueDark;
+
+      .button__loader {
+        fill: $grayDarker;
+      }
+
+      &:hover, &:focus {
+        color: $blueLight;
+      }
+    }
+  }
+
+  //-----------  Outlined Buttons  ----------- */
+
+  &.is-outlined {
+    background: transparent;
+
+    &.button--blue {
+      border-color: $blueLight;
+      color: $blueLight;
+
+      &:hover, &:focus {
+        background: $blueLight;
+        border-color: $blueLight;
+        color: $white;
+      }
+
+      &.is-disabled, &[disabled] {
+        background: transparent;
+        border-color: mix($blueLight, $white, 50%);
+        color: mix($blueLight, $white, 50%);
+      }
+    }
+
+    &.button--dark-blue {
+      border-color: $blue;
+      color: $blue;
+
+      &:hover, &:focus {
+        background: $blue;
+        border-color: $blue;
+        color: $white;
+      }
+
+      &.is-disabled, &[disabled] {
+        background: transparent;
+        border-color: mix($blue, $white, 50%);
+        color: mix($blue, $white, 50%);
+      }
+    }
+
+    &.button--gray {
+      border-color: $grayDark;
+      color: $grayDark;
+
+      &:hover, &:focus {
+        background: $grayDark;
+        border-color: $grayDark;
+        color: $white;
+      }
+
+      &.is-disabled, &[disabled] {
+        background: transparent;
+        border-color: mix($grayDark, $white, 50%);
+        color: mix($grayDark, $white, 50%);
+      }
+    }
+
+    &.button--white {
+      border-color: $white;
+      color: $white;
+
+      &:hover, &:focus {
+        background: $white;
+        color: $blueDark;
+      }
+
+      &.is-disabled, &[disabled] {
+        background: transparent;
+        color: $white;
+      }
+    }
+  }
+
+  //-----------  Loading State  ----------- */
+
+  &.is-loading {
+    .button__loader {
+      opacity: 1;
+    }
+  }
+}

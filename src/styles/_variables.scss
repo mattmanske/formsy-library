@@ -1,0 +1,129 @@
+/*----------- Colors -----------*/
+
+$white            : #ffffff;
+$black            : #404040;
+
+$gray             : #f1f1f1;
+$grayDark         : darken($gray, 20%);
+$grayLight        : lighten($gray, 2%);
+$grayDarker       : darken($grayDark, 20%);
+
+$blueLight        : #23cdfd;
+$blue             : #007ebc;
+$blueDark         : #054061;
+
+$pink             : #FF1493;
+$red              : red;
+$green            : #A0D468;
+$orange           : #fe852c;
+
+/*----------- Sizing -----------*/
+
+$emBase           : 16px;
+
+$maxWidth         : 68rem;
+$blockWidth       : 42rem;
+$compactWidth     : 34rem;
+$smallWidth       : 28rem;
+
+$sidebarWidth     : 25em;
+
+$gutter           : 1.25em;
+$gutterSm         : $gutter / 1.25;
+$gutterLg         : $gutter * 1.25;
+
+$radius           : 3px;
+$transition       : 0.25s ease-out;
+
+/*----------- Fonts -----------*/
+
+$bodyFontSize     : normal;
+$lightFontSize    : 300;
+$boldFontSize     : 600;
+$darkFontSize     : 900;
+
+/*----------- Breakpoints -----------*/
+
+$mobileBreak      : 25em;
+$middleBreak      : 38em;
+$tabletBreak      : 50em;
+$largeBreak       : 60em;
+
+/*----------- Breakpoint Measurements -----------*/
+
+$headerHieghtMap  : 4.0625em;
+$headerHieghtFull : 5.91625em;
+
+/*----------- Media Queries -----------*/
+
+@mixin large {
+  @media (min-width: #{$tabletBreak}) and (max-width: #{$largeBreak}){
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$middleBreak}) and (max-width: #{$tabletBreak}){
+    @content;
+  }
+}
+
+@mixin middle {
+  @media (min-width: #{$mobileBreak}) and (max-width: #{$middleBreak}){
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobileBreak){
+    @content;
+  }
+}
+
+@mixin large-down {
+  @media (max-width: $largeBreak){
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: $tabletBreak){
+    @content;
+  }
+}
+
+@mixin middle-down {
+  @media (max-width: $middleBreak){
+    @content;
+  }
+}
+
+@mixin mobile-down {
+  @media (max-width: $mobileBreak){
+    @content;
+  }
+}
+
+@mixin large-up {
+  @media (min-width: $largeBreak){
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $tabletBreak){
+    @content;
+  }
+}
+
+@mixin middle-up {
+  @media (min-width: $middleBreak){
+    @content;
+  }
+}
+
+@mixin mobile-up {
+  @media (min-width: $mobileBreak){
+    @content;
+  }
+}

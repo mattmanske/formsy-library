@@ -1,0 +1,125 @@
+//-----------  Text Inputs  ----------- */
+
+input,
+textarea,
+select {
+  @include light-font;
+
+  appearance: none;
+  border: 1px solid $grayDark;
+  border-radius: $radius;
+  color: $black;
+  display: block;
+  padding: 0.67em 0.75em;
+  resize: none;
+  transition: $transition;
+  width: 100%;
+
+  &:focus {
+    border-color: $blueDark;
+    color: $blueDark;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $grayDark;
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
+
+  //-----------  STATE: Disabled  ----------- */
+
+  &:disabled,
+  &.disabled {
+    background: $gray;
+    color: $gray;
+    cursor: not-allowed;
+  }
+}
+
+//-----------  Text Areas  ----------- */
+
+textarea {
+  min-height: 7em;
+}
+
+//-----------  Range Input  ----------- */
+
+input[type='range'] {
+  appearance: none;
+  background: transparent;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  &::-webkit-slider-runnable-track {
+    border: 1px solid $gray;
+    border-radius: 10em;
+    box-shadow: inset 1px 1px 3px rgba($black, 0.08);
+    cursor: pointer;
+    height: 0.5rem;
+    width: 100%;
+  }
+
+  &::-moz-range-track {
+    border: 1px solid $gray;
+    border-radius: 10em;
+    box-shadow: inset 1px 1px 3px rgba($black, 0.08);
+    cursor: pointer;
+    height: 0.5rem;
+    width: 100%;
+  }
+
+  &::-ms-track {
+    border: 1px solid;
+    border-radius: 10em;
+    box-shadow: inset 1px 1px 3px rgba($black, 0.08);
+    cursor: pointer;
+    height: 0.5rem;
+    width: 100%;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    background: $blue;
+    border: 0;
+    border-radius: 10em;
+    box-shadow: 2px 2px 4px rgba($black, 0.15);
+    cursor: pointer;
+    height: 1.5rem;
+    margin-top: -0.6rem;
+    width: 1.5rem;
+  }
+
+  &::-moz-range-thumb {
+    background: $blue;
+    border: 0;
+    border-radius: 10em;
+    box-shadow: 2px 2px 4px rgba($black, 0.15);
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  &::-ms-thumb {
+    background: $blue;
+    border: 0;
+    border-radius: 10em;
+    box-shadow: 2px 2px 4px rgba($black, 0.15);
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}

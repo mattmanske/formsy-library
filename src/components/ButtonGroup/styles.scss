@@ -1,0 +1,41 @@
+//-----------  Imports  -----------//
+
+@import '../../styles/_variables.scss';
+@import '../../styles/_mixins.scss';
+
+//-----------  Buttons  ----------- */
+
+.button-group {
+  display: inline-block;
+  border-radius: 10em;
+  box-shadow: 0.1rem 0.1rem 0.6rem rgba($black, 0.15);
+  transition: $transition;
+  white-space: nowrap;
+
+  > .button {
+    border-radius: 0;
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    & + .button::after {
+      @include vertical-align;
+
+      content: '';
+      height: 110%;
+      width: 1px;
+      left: -2px;
+      background: rgba($white, 0.5);
+    }
+
+    &:first-child {
+      border-radius: 10em 0 0 10em;
+    }
+
+    &:last-child {
+      border-radius: 0 10em 10em 0;
+    }
+  }
+}

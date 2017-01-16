@@ -1,0 +1,48 @@
+//-----------  Form Controls  ----------- */
+
+.control-wrapper {
+  position: relative;
+
+  .input-error {
+    @include vertical-align;
+
+    background: $red;
+    border-radius: $radius;
+    color: $white;
+    left: calc(100% - 1em);
+    opacity: 0;
+    padding: $gutterSm;
+    transition: $transition;
+    z-index: 50;
+
+    &::after {
+      border: solid transparent;
+      border-right-color: $red;
+      border-width: 0.6em 0.8em 0.6em 0;
+      content: "";
+      height: 0;
+      margin-top: -0.6em;
+      pointer-events: none;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      width: 0;
+    }
+
+    span {
+      display: block;
+      width: 10em;
+
+      & + span {
+        margin-top: 0.25em;
+      }
+    }
+  }
+
+  > *:first-child {
+    &:focus + .input-error {
+      left: calc(100% + 0.4em);
+      opacity: 1;
+    }
+  }
+}

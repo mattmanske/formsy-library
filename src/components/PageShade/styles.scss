@@ -1,0 +1,28 @@
+//-----------  Imports  -----------//
+
+@import '../../styles/_variables.scss';
+
+//-----------  Page Cover Shade  ----------- */
+
+.page-shade {
+  background: rgba($blueDark, 0.5);
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: translate3d(100%, 0, 0);
+  transition: opacity 0.2s, transform 0s 0.2s;
+  width: 100vw;
+  z-index: 250;
+
+  //-----------  STATE: Actived  ----------- */
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 0.2s;
+  }
+}

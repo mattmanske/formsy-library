@@ -1,0 +1,104 @@
+//-----------  Imports  -----------//
+
+@import '../styles/_variables.scss';
+@import '../styles/_mixins.scss';
+
+//-----------  Commoon Modal Layouts  ----------- */
+
+.modal-wrapper__content {
+
+  h1, h2, h3, h4, p {
+    text-align: center;
+  }
+
+  p {
+    color: $grayDarker;
+    margin-top: 0.5em;
+
+    a {
+      color: $blue;
+      text-decoration: underline;
+    }
+  }
+
+  .control-group {
+    margin-bottom: $gutterSm;
+    margin-top: 2em;
+
+    > * {
+      margin: 0;
+
+      input {
+        border-radius: 0;
+        font-size: 1.25em;
+
+        &:focus {
+          position: relative;
+          z-index: 5;
+        }
+      }
+
+      &.is-invalid {
+        z-index: 10;
+      }
+
+      & + * {
+        margin-top: -1px;
+      }
+
+      &:first-child input {
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+      }
+
+      &:last-child input {
+        border-bottom-left-radius: $radius;
+        border-bottom-right-radius: $radius;
+      }
+    }
+  }
+
+  textarea {
+    font-size: 1.2em;
+    margin-bottom: $gutterSm * 0.8;
+    margin-top: 0;
+  }
+
+  .button,
+  .redux-submit {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: $gutter;
+    width: 100%;
+  }
+
+  h5 {
+    @include body-font;
+
+    color: $black;
+    margin-bottom: 0.5em;
+    text-transform: capitalize;
+  }
+
+  .selector-wrapper {
+    display: inline-block;
+
+    label {
+      font-size: 1em;
+    }
+
+    & + .selector-wrapper {
+      padding-left: 3em;
+    }
+  }
+
+  small {
+    @include light-font;
+
+    color: $grayDarker;
+    display: block;
+    font-size: 0.85em;
+    margin-top: $gutterLg;
+    text-align: center;
+  }
+}

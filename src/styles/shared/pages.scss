@@ -1,0 +1,221 @@
+//-----------  Imports  -----------//
+
+@import '../styles/_variables.scss';
+@import '../styles/_mixins.scss';
+
+//-----------  Static Pages  ----------- */
+
+.global-wrapper.page-index,
+.global-wrapper.page-buyers,
+.global-wrapper.page-sellers {
+  
+  .global-header,
+  .global-footer {
+    background: transparent;
+    color: $white;
+    position: absolute;
+
+    .search-bar {
+      display: none;
+    }
+
+    .mobile-menu-button .icon-menu {
+      color: $white;
+    }
+  }
+
+  .global-header {
+    top: 0;
+  }
+
+  .global-footer {
+    bottom: 0;
+  }
+
+  //-----------  Sections  ----------- */
+
+  section {
+    h1 {
+      @include antialiased;
+
+      @include dark-font;
+    }
+
+    h3 {
+      @include antialiased;
+
+      @include light-font;
+    }
+
+    //-----------  Hero  ----------- */
+
+    &.hero-section {
+      @include bg-cover;
+
+      background-color: $blueDark;
+      color: $white;
+      padding-bottom: 9em;
+      padding-top: 9em;
+
+      &::before {
+        background: linear-gradient(rgba($black, 0.25) 50%, rgba($black, 0) 100%);
+        content: "";
+        height: 100%;
+        left: 0;
+        max-height: 22em;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    //-----------  Call to Action  ----------- */
+
+    &.cta-section {
+      padding: $gutterLg 0;
+
+      p {
+        margin: 1.5em auto 1em;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .button {
+        margin-top: $gutterLg;
+      }
+    }
+
+    //-----------  Icon Overview  ----------- */
+
+    &.overview-section {
+      background: $gray;
+      padding-bottom: $gutterSm;
+      padding-top: $gutterSm;
+
+      .overview-wrapper {
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        padding-left: $gutterLg;
+        padding-right: $gutterLg;
+
+        .overview-block {
+          flex: 0 1 25%;
+          text-align: center;
+
+          i {
+            border: 3px solid $blueLight;
+            border-radius: 100%;
+            color: $blueLight;
+            display: inline-block;
+            font-size: 2.75em;
+            height: 1.85em;
+            margin-bottom: 0.5em;
+            width: 1.85em;
+
+            &::before {
+              vertical-align: -0.45em;
+            }
+          }
+
+          p {
+            font-size: 0.8em;
+            padding: 0 $gutterLg;
+          }
+        }
+      }
+    }
+
+    //-----------  Footer  ----------- */
+
+    &.footer-section {
+      @include bg-cover;
+
+      background-color: $blueDark;
+      color: $white;
+      padding-bottom: 8em;
+      padding-top: 8em;
+
+      p {
+        @include antialiased;
+
+        margin-bottom: 2em;
+      }
+
+      .button {
+        margin: 0.25em;
+      }
+    }
+  }
+}
+
+//-----------  Buyers Page  ----------- */
+
+.global-wrapper.page-buyers {
+
+  section {
+    &.hero-section {
+      background-color: $gray;
+      background-position: center left;
+      color: $black;
+    }
+
+    //-----------  STATE: Tablet  ----------- */
+
+    @include tablet-down {
+
+      &.hero-section {
+        background-position: bottom right;
+      }
+    }
+  }
+}
+
+//-----------  Buyers/sellersers Page  ----------- */
+
+.global-wrapper.page-buyers,
+.global-wrapper.page-sellers {
+  section {
+    //-----------  Hero  ----------- */
+
+    &.hero-section {
+      padding-bottom: 6em;
+
+      p {
+        margin: 2em auto;
+      }
+    }
+
+    //-----------  STATE: Tablet  ----------- */
+
+    @include tablet-down {
+      &.overview-section {
+        .overview-wrapper {
+          flex-wrap: wrap;
+          margin-top: -1.5em;
+          padding: 0;
+
+          .overview-block {
+            flex: 1 0 50%;
+            margin-top: 1.5em;
+          }
+        }
+      }
+    }
+
+
+    //-----------  STATE: Middle  ----------- */
+
+    @include middle-down {
+      &.overview-section {
+        .overview-wrapper {
+          .overview-block {
+            flex: 1 0 100%;
+          }
+        }
+      }
+    }
+  }
+}

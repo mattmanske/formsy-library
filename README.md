@@ -1,2 +1,3 @@
-# formsy-library
-React input library for use with Formsy form framework. 
+# Formsy redux form library
+
+Formsy redux form library

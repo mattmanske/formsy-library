@@ -1,0 +1,28 @@
+//-----------  Imports  -----------//
+
+@import '../../styles/_variables.scss';
+
+//-----------  Bounds Wrapping  -----------//
+
+.bounds-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $maxWidth;
+  padding: $gutterLg;
+  position: relative;
+
+  &.bounds-wrapper--block {
+    max-width: $blockWidth;
+    text-align: center;
+  }
+
+  &.bounds-wrapper--compact {
+    max-width: $compactWidth;
+    text-align: center;
+  }
+
+  &.bounds-wrapper--small {
+    max-width: $smallWidth;
+    text-align: center;
+  }
+}

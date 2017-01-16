@@ -1,0 +1,97 @@
+//-----------  Type Effects  ----------- */
+
+@mixin bg-cover($position: center center) {
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+//-----------  Type Effects  ----------- */
+
+@mixin ellipsis($width: 100%) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//-----------  Vertical Alignment  ----------- */
+
+@mixin vertical-align($position: absolute) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//-----------  Horizontal Alignment  ----------- */
+
+@mixin horizontal-align($position: absolute) {
+  left: 50%;
+  position: $position;
+  transform: translateX(-50%);
+}
+
+//-----------  Center Alignment  ----------- */
+
+@mixin center-align($position: absolute) {
+  left: 50%;
+  position: $position;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//-----------  Undo Alignment  ----------- */
+
+@mixin undo-align {
+  left: auto;
+  position: relative;
+  top: auto;
+  transform: translate(0, 0);
+}
+
+//-----------  Body Font Mixin  ----------- */
+
+@mixin body-font {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: $bodyFontSize;
+}
+
+//-----------  Light Font Mixin  ----------- */
+
+@mixin light-font {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: $lightFontSize;
+}
+
+//-----------  Bold Font Mixin  ----------- */
+
+@mixin bold-font {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: $boldFontSize;
+}
+
+//-----------  Dark Font Mixin  ----------- */
+
+@mixin dark-font {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: $darkFontSize;
+}
+
+//-----------  Weight Corrections  ----------- */
+
+@mixin antialiased($smooth: true) {
+  @if $smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+//-----------  Icon Mixin  ----------- */
+
+@mixin use-icon($content: "") {
+  content: $content;
+  font-family: "rexsi";
+}
