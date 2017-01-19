@@ -136,9 +136,9 @@
       border-color: rgba($red, 0.75);
       color: $red;
 
-      &::placeholder {
-        color: $red !important;
-      }
+      // &::placeholder {
+      //   color: $red !important;
+      // }
 
       &:hover, &:focus {
         border-color: rgba($red, 1);

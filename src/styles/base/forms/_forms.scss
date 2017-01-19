@@ -3,10 +3,32 @@
 form {
   width: 100%;
 
-  input[type='submit'] {
-    float: right;
-    font-size: 1.25rem;
-    margin-top: $gutterSm;
+  .redux-submit {
+    margin: 1.5em 0 2em;
+  }
+
+  //-----------  STATE: Side-by-Side  ----------- */
+
+  @include middle-up {
+
+    &.side-by-side {
+
+      .input-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        > .input-wrapper__label {
+          flex: 0 0 22%;
+          margin-top: 0.9em;
+          white-space: normal;
+          text-align: right;
+        }
+
+        > .input-wrapper__interior {
+          flex: 0 0 76%;
+        }
+      }
+    }
   }
 }
 

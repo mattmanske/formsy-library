@@ -3,25 +3,26 @@
 import { storiesOf, action, addDecorator }          from '@kadira/storybook'
 import { withKnobs, select, text, boolean, number } from '@kadira/storybook-addon-knobs'
 
-import _            from 'lodash'
-import moment       from 'moment'
-import React        from 'react'
+import _             from 'lodash'
+import moment        from 'moment'
 
-import PageShade    from '../components/PageShade'
-import PageSection  from '../components/PageSection'
-import PageWrapper  from '../components/PageWrapper'
+import React         from 'react'
 
-import Button       from '../components/Button'
-import ButtonGroup  from '../components/ButtonGroup'
-import InputWrapper from '../components/InputWrapper'
+import PageShade     from '../components/PageShade'
+import PageSection   from '../components/PageSection'
+import PageWrapper   from '../components/PageWrapper'
+
+import Button        from '../components/Button'
+import ButtonGroup   from '../components/ButtonGroup'
+import InputWrapper  from '../components/InputWrapper'
+
+import { maskPhone } from '../utils/forms'
 
 //-----------  Decorators  -----------//
 
 addDecorator(withKnobs)
 
 let elements = storiesOf('Elements', module)
-
-let maskPhone = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
 
 //-----------  Buttons  -----------//
 

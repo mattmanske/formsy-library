@@ -26,20 +26,21 @@ const Button = (props) => {
   const loaderCx = `${block}__loader`
 
   return (
-    <div className={blockCx} disabled={props.disabled || props.loading} onClick={props.onClick}>
+    <button type={props.type} className={blockCx} disabled={props.disabled || props.loading} onClick={props.onClick}>
       {props.icon && <i className="material-icons">{props.icon}</i>}
       {props.children && <span className={innerCx}>{props.children}</span>}
       {props.loading && <LoadingSpinner className={loaderCx} />}
-    </div>
+    </button>
   )
 }
 
 //-----------  Prop Types  -----------//
 
 Button.propTypes = {
+  type     : PropTypes.string,
   icon     : PropTypes.string,
   size     : PropTypes.oneOf(['lg', 'rg', 'sm']),
-  color    : PropTypes.oneOf(['blue', 'dark-blue', 'gray', 'white']),
+  color    : PropTypes.oneOf(['blue', 'red', 'dark-blue', 'gray', 'white']),
   loading  : PropTypes.bool,
   disabled : PropTypes.bool,
   onClick  : PropTypes.func,

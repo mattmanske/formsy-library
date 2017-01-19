@@ -6,7 +6,7 @@ select {
   @include light-font;
 
   appearance: none;
-  border: 1px solid $grayDark;
+  border: 1px solid $gray;
   border-radius: $radius;
   color: $black;
   display: block;
@@ -16,8 +16,7 @@ select {
   width: 100%;
 
   &:focus {
-    border-color: $blueDark;
-    color: $blueDark;
+    border-color: $grayDark;
     outline: none;
   }
 

@@ -145,7 +145,7 @@ const InputWrapper = (field) => {
 //-----------  Prop Types  -----------//
 
 InputWrapper.propTypes = {
-  type         : PropTypes.oneOf(['checkbox', 'color', 'date', 'datetime', 'datetime-local', 'email', 'hidden', 'month', 'number', 'password', 'radio', 'range', 'search', 'tel', 'text', 'textarea', 'time', 'url', 'week']),
+  type         : PropTypes.oneOf(['checkbox', 'select', 'color', 'date', 'datetime', 'datetime-local', 'email', 'hidden', 'month', 'number', 'password', 'radio', 'range', 'search', 'tel', 'text', 'textarea', 'time', 'url', 'week']),
   input        : PropTypes.object,
   disabled     : PropTypes.bool,
   required     : PropTypes.bool,

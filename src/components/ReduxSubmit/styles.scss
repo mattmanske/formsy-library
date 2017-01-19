@@ -1,0 +1,89 @@
+//-----------  Imports  -----------//
+
+@import '../../styles/_variables.scss';
+@import '../../styles/_mixins.scss';
+
+//-----------  Submit Button  ----------- */
+
+@keyframes spin {
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+		transform-origin: center center;
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+		transform-origin: center center;
+	}
+}
+
+.redux-submit {
+	display: inline-block;
+	text-align: right;
+	width: 100%;
+
+	a {
+		color: $grayDark;
+		font-size: 0.8em;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $grayDarker;
+		}
+
+		&[disabled] {
+			color: $gray !important;
+			pointer-events: none !important;
+		}
+
+		& + .button {
+			margin-left: 1em;
+		}
+	}
+
+	.redux-submit__loading {
+		height: 3em;
+		width: 3em;
+		animation: spin 0.9s infinite cubic-bezier(0.085, 0.260, 0.935, 0.710);
+
+		path {
+			stroke: $blueLight;
+			stroke-width: 5;
+		}
+	}
+
+	.redux-submit__success {
+
+		path {
+			stroke: $white;
+			stroke-linecap: round;
+			stroke-width: 6;
+		}
+	}
+
+	.redux-submit__error {
+
+		path {
+			stroke: $white;
+			stroke-linecap: round;
+			stroke-width: 6;
+		}
+	}
+
+  //-----------  STATE: Loading  ----------- */
+
+  &.redux-submit--loading {
+
+  }
+
+  //-----------  STATE: Success  ----------- */
+
+  &.redux-submit--success {
+
+  }
+
+  //-----------  STATE: Error  ----------- */
+
+  &.redux-submit--error {
+
+  }
+}

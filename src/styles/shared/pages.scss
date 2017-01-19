@@ -1,14 +1,14 @@
 //-----------  Imports  -----------//
 
-@import '../styles/_variables.scss';
-@import '../styles/_mixins.scss';
+@import '../_variables.scss';
+@import '../_mixins.scss';
 
 //-----------  Static Pages  ----------- */
 
 .global-wrapper.page-index,
 .global-wrapper.page-buyers,
 .global-wrapper.page-sellers {
-  
+
   .global-header,
   .global-footer {
     background: transparent;

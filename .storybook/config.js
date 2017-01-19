@@ -15,5 +15,6 @@ setOptions({
 //-----------  Configuration  -----------//
 
 storybook.configure(() =>
+  require('../src/stories/forms.js'),
   require('../src/stories/elements.js'),
 module)
